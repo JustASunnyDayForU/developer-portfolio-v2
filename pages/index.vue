@@ -19,9 +19,6 @@
 				<span class="action">
 					// complete the game to continue
 				</span>
-				<span :class="{hide: isMobile}">
-					// you can also see it on my Github page
-				</span>
 				<span :class="{hide: !isMobile}">
 					// find my profile on Github:
 				</span>
@@ -29,22 +26,12 @@
 					<span class="identifier">
 						const
 					</span>
-					<span class="variable-name">
-						githubLink
-					</span>
-					<span class="operator">
-						=
-					</span>
-					<a class="string" :href="'https://github.com/' + config.public.dev.contacts.social.github.user">
-						"https://github.com/{{ config.public.dev.contacts.social.github.user }}"
-					</a>
+					
 				</p>
 			</div>
 		</section>
 
-		<section data-aos="fade-up" class="game" v-if="!isMobile">
-			<SnakeGame />
-		</section>
+
 
 	</main>
 </template>
@@ -159,7 +146,7 @@
   display: none;
 }
 
-.css-blurry-gradient-blue {
+/* .css-blurry-gradient-blue {
   position: fixed;
   bottom: 25%;
   right: 5%;
@@ -171,9 +158,9 @@
   background: radial-gradient(circle at 50% 50%,rgba(77, 91, 206, 1), rgba(76, 0, 255, 0));
   opacity: 0.5;
   z-index: 10;
-}
+} */
 
-.css-blurry-gradient-green {
+/* .css-blurry-gradient-green {
   position: absolute;
   top: 20%;
   right: 30%;
@@ -184,7 +171,7 @@
   background: radial-gradient(circle at 50% 50%,rgba(67, 217, 173, 1), rgba(76, 0, 255, 0));
   opacity: 0.5;
   z-index: 10;
-}
+} */
 
 #info {
   font-size: 14px;

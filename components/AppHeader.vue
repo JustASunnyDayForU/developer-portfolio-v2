@@ -1,71 +1,82 @@
 <template>
-    <header id="navbar" class="w-full hidden lg:flex flex-col">
-      <nav class="w-full flex justify-between border-bot">
-
-          <div class="flex">
-            <NuxtLink id="nav-logo" to="/">
-              {{ config.dev.logo_name }}
-            </NuxtLink>
-
-            <NuxtLink id="nav-link" to="/" :class="{ active: isActive('/') }">
-              _hello
-            </NuxtLink>
-  
-            <NuxtLink id="nav-link" to="/about-me" :class="{ active: isActive('/about-me') }">
-              _about-me
-            </NuxtLink>
-  
-            <NuxtLink id="nav-link" to="/projects" :class="{ active: isActive('/projects') }">
-              _projects
-            </NuxtLink>
-          </div>
-
-          <NuxtLink id="nav-link-contact" to="/contact-me" :class="{ active: isActive('/contact-me')}">
-            _contact-me
-          </NuxtLink>
-      
-      </nav>
-
-    </header>
-
+     <header id="navbar" class="flex flex-col items-center">
+    <div class="flex items-center mb-4">
+      <div class="flex">
+        <NuxtLink id="nav-logo" to="/">
+          {{ config.dev.logo_name }}
+        </NuxtLink>
+      </div>
+    </div>
+    <nav class="w-full flex justify-center border-t border-b lg:border-none">
+      <div class="flex">
+        <NuxtLink id="nav-link" to="/" :class="{ active: isActive('/') }">
+          HOME
+        </NuxtLink>
+        <NuxtLink id="nav-link" to="/RoomType" :class="{ active: isActive('/testab') }">
+          ROOMTYPE
+        </NuxtLink>
+        <NuxtLink id="nav-link" to="/Gallery" :class="{ active: isActive('/_1') }">
+          GALLERY
+        </NuxtLink>
+        <NuxtLink id="nav-link" to="/ContactUs" :class="{ active: isActive('/projects') }">
+          CONTACT US
+        </NuxtLink>
+        <NuxtLink id="nav-link" to="/Promotion" :class="{ active: isActive('/projects') }">
+          PROMOTION
+        </NuxtLink>
+        <NuxtLink id="nav-link" to="/QA" :class="{ active: isActive('/projects') }">
+          Q&A
+        </NuxtLink>
+      </div>
+    </nav>
+  </header>
 </template>
 
 <style>
 
 #nav-link {
-  border-right: 1px solid #1E2D3D;
-  @apply text-menu-text font-fira_retina px-6 h-full flex items-center;
+  border-right: 1px solid #746c5c;
+  color: white;
+  @apply  text-brown-text font-fira_retina px-6 h-full flex items-center ;
 }
 
 #nav-link-contact {
-  border-left: 1px solid #1E2D3D;
+  border-left: 1px solid #746c5c;
   @apply text-menu-text font-fira_retina px-6 h-full flex items-center;
 }
 
 #nav-link:hover, #nav-link-contact:hover {
-  background-color: #1e2d3d74;
+  background-color: #746c5c;
   color: white;
 }
 
 #nav-logo {
-  border-right: 1px solid #1E2D3D;
-  @apply text-menu-text font-fira_retina px-6 h-full flex items-center;
+  border-right: 1px solid #746c5c;
+  @apply text-brown-text font-fira_retina px-16 h-full flex items-center;
 }
 
 #nav-logo:hover {
-  background-color: #1e2d3d74;
-  color: white;
+  background-color: white;
+  color: #746c5c;
 }
 
 #nav-link.router-link-active, #nav-link-contact.router-link-active {
-  border-bottom: 2px solid #FEA55F;
+  border-bottom: 2px solid #746c5c;
+  border-top: 2px solid #746c5c;
+  border-right: 2px solid #746c5c;
+  color: #746c5c;
+  
+}
+
+#nav-link.router-link-active:hover{
   color: white;
 }
 
 #nav-logo.router-link-active {
-  border-right: 1px solid #1E2D3D;
+  border-right: 0px solid #746c5c;
   border-bottom: none;
-  @apply text-menu-text;
+  color: white;
+  @apply text-brown-text;
 }
 
 #navbar > nav {

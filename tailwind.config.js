@@ -25,6 +25,8 @@ module.exports = {
                 'greenfy': '#43D9AD',
                 'bluefy-dark': '#011627',
                 'purplefy': '#5565E8',
+                'white-background' : '#eeedec',
+                'brown-text' : '#746c5c',
 
             }
         },
