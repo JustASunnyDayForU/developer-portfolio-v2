@@ -7,10 +7,4 @@ export default defineAppConfig({
     blog:{
       enabled: true,
     },
-    theme: {
-      dark: true,
-      colors: {
-        primary: '#ff0000'
-      }
-    }
   })

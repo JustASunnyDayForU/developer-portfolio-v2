@@ -29,7 +29,6 @@ export default defineNuxtConfig({
         { hid: 'og:description', property: 'og:description', content: 'A awesome developer portfolio design.' },
         { hid: 'og:image', property: 'og:image', content: 'demo-share.jpg' },
         { hid: 'og:url', property: 'og:url', content: 'https://developer-portfolio-v1.netlify.app/' },
-        { name: 'theme-color', content: '#010C15' },
         // ...
       ],
       link: [

@@ -1,85 +1,3 @@
-<template>
-    <!-- <footer class='flex md:justify-between border-top text-menu-text font-fira_retina'>
-
-        <div class="w-full flex justify-between md:justify-start">
-            <span id="social-title" class="h-full flex justify-center items-center border-right px-5">
-                find me in:
-            </span>
-            <div id="social-icons" class="flex">
-                <NuxtLink :to="social.twitter.url + social.twitter.user" target="_blank" class="flex justify-center items-center">
-                    <img src="/icons/social/twitter.svg"/>
-                </NuxtLink>
-                <NuxtLink :to="social.facebook.url + social.facebook.user" target="_blank" class="flex justify-center items-center">
-                    <img src="/icons/social/facebook.svg"/>
-                </NuxtLink>
-                <NuxtLink :to="social.github.url + social.github.user" target="_blank" class="flex md:hidden justify-center items-center">
-                <img src="/icons/social/github.svg"/>
-            </NuxtLink>
-            </div>
-        </div>
-
-        <NuxtLink :to="social.github.url + social.github.user" target="_blank" class="hidden md:flex items-center px-5 border-left">
-            @{{ social.github.user }}
-            <img src="/icons/social/github.svg"/>
-        </NuxtLink>
-
-    </footer> -->
-</template>
-
-<style>
-
-footer {
-    height: 40px;
-    min-height: 40px;
-    font-size: 13px;
-}
-
-footer a:hover {
-    background-color: #1e2d3d74;
-}
-
-#social-icons > a {
-    border-right: 1px solid #1E2D3D;
-    height: 100%;
-    width: 50px;
- }
-
-#social-icons > a > img {
-    width: 1.25rem; /* 20px */
-    height: 1.25rem; /* 20px */
-    margin: auto;
-    opacity: 0.4;
-}
-
-footer > a > img {
-    width: 1.25rem; /* 20px */
-    height: 1.25rem; /* 20px */
-    margin-left: 0.5rem; /* 8px */
-  }
-
-#social-icons > a:hover img {
-    opacity: 1;
-}
-
-@media (max-width: 768px) {
-
-    #social-title {
-        border-right: none;
-    }
-
-    #social-icons > a {
-        border-right: none;
-        border-left: 1px solid #1E2D3D;
-    }
-
-    #social-icons > a > img {
-        width: 1.5rem; /* 20px */
-        height: 1.5rem; /* 20px */
-  }
-}
-
-</style>
-
 <script>
 export default {
     name: 'AppFooter',
@@ -95,3 +13,171 @@ export default {
     },
 }
 </script>
+
+<template>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <footer>
+        <div class="footer-content">
+            <h4>BANGKOK SALES OFFICE</h4>
+            <h4>.</h4>
+            <h4>.</h4>
+            <p>Rimpae Management Co.,Ltd.
+            <br>33/4 Soi Sukhumvit46 ,Sukhumvit Rd.
+            <br>Prakanong ,Klongtoey ,Bangkok 10110
+            </p>
+            <ul class="socials">
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+
+            </ul>
+
+        </div>
+
+        <div class="footer-bottom">
+
+
+        </div>
+
+    </footer>
+</template>
+
+<style>
+
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #111;
+  height: auto;
+  width: 100vw;
+  padding-top: 40px;
+  color: #fff;
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  color: gray;
+}
+
+.footer-content h3 {
+  font-size: 2.1rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  line-height: 3rem;
+  color: gray;
+}
+
+.footer-content p {
+  max-width: 500px;
+  margin: 10px auto;
+  line-height: 28px;
+  font-size: 14px;
+  color: gray;
+}
+
+.socials {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 0 3rem 0;
+}
+
+.socials li {
+  margin: 0 10px;
+}
+
+.socials a {
+  text-decoration: none;
+  padding: 5px;
+}
+
+.socials a i {
+    color: gray;
+  font-size: 2rem;
+  width: 20px;
+  transition: color 0.4s ease;
+}
+
+.socials a:hover i {
+  color: aqua;
+}
+
+.footer-bottom {
+  background: #000;
+
+  width: 100vw;
+
+  padding: 20px;
+
+  padding-bottom: 40px;
+
+  text-align: center;
+}
+
+.footer-bottom p {
+  float: left;
+
+  font-size: 14px;
+
+  word-spacing: 2px;
+}
+
+.footer-bottom p a {
+  color: #ccc;
+
+  font-size: 16px;
+
+  text-decoration: none;
+}
+
+.footer-bottom span {
+  text-transform: uppercase;
+}
+
+.footer-menu {
+  float: right;
+}
+
+.footer-menu ul {
+  display: flex;
+}
+
+.footer-menu ul li {
+  padding-right: 10px;
+
+  display: block;
+}
+
+.footer-menu ul li a {
+  color: #cfd2d6;
+
+  text-decoration: none;
+}
+
+.footer-menu ul li a:hover {
+  color: #27bcda;
+}
+
+@media (max-width: 500px) {
+  .footer-bottom p {
+    float: none;
+  }
+
+  .footer-menu ul {
+    display: flex;
+
+    margin-top: 10px;
+
+    margin-bottom: 20px;
+
+    text-align: center;
+  }
+}
+
+</style>

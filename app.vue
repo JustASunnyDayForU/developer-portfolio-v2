@@ -1,5 +1,4 @@
 <template>
-  <MobileMenu/>
   <AppHeader/>
   <NuxtPage data-aos="fade-in"/>
   <AppFooter/>
