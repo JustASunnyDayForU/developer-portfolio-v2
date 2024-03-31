@@ -1,51 +1,3 @@
-<template>
-  <main id="contact-me" class="page">
-    
-    <div class="flex-col w-full overflow-auto">
-
-        <div class="flex justify-end">
-            <div id="header" class="text-right pr-24 w-72">
-                ZOOM-IN MAP
-            </div>
-        </div>
-        <div id="img">
-              <img src="/images/projects/ai-resources.png" alt="">
-          </div>
-
-          <div class="flex flex-col items-center relative p-6">
-            <span class="bg-slate-500 w-full h-32 absolute top-20 left-0"></span>
-            <div class="flex justify-center z-10">
-                <img src="/images/projects/ai-resources.png" alt="" class="max-h-80">
-            </div>
-            </div>
-
-        <!-- windows tab -->
-        <div class="tab-height w-full hidden lg:flex border-right border-bot items-center">
-
-            <!-- main -->
-            <div class="flex lg:grid lg:grid-cols-2 h-full w-full">
-      
-                <div id="left" class="h-full w-full flex flex-col border-right items-center">
-                    <ContactForm :name="name" :email="email" :message="message" />
-
-                </div>
-
-                <div id="right" class="h-full w-full hidden lg:flex">
-                  
-
-                    <!-- scroll bar -->
-                    <div id="scroll-bar" class="h-full border-left flex justify-center py-1">
-                        <div id="scroll"></div>
-                    </div>
-              
-                </div>
-            </div>
-        </div>
-
-    </div>
-  </main>
-</template>
-
 <script>
 export default {
   data() {
@@ -114,26 +66,62 @@ export default {
       }
   },
 }
+
 </script>
 
-<style>
+<template>
+  <main id="contact-me" class="page">
+    
+    <div class="section">
+        <div style="width: 100%; height: 70px; 
+            background: rgb(124,124,124);  
+            background: linear-gradient(90deg, rgba(124,124,124,1) 0%, rgba(135,135,135,1) 60.5%, rgba(255,255,255,1) 60.5%, rgba(251,251,251,1) 61%, rgba(213,213,213,1) 61%, rgba(194,194,194,1) 100%);
+            text-align: start; align-items: center;">
+            <div id="title" class="text-3xl">
+                LOCATION
+            </div>
+        </div>
+        <div id="img">
+              <img src="/images/projects/ai-resources.png" alt="">
+        </div>
+
+        <div class="section">
+            <div style="width: 100%; height: 70px; 
+            background: rgb(124,124,124);  
+            background: linear-gradient(90deg, rgba(124,124,124,1) 0%, rgba(135,135,135,1) 60.5%, rgba(255,255,255,1) 60.5%, rgba(251,251,251,1) 61%, rgba(213,213,213,1) 61%, rgba(194,194,194,1) 100%);
+            text-align: start;">
+                <div id="title" class="text-3xl flex">
+                    CONTACT US
+                </div>
+            </div>
+            <div class="flex lg:grid lg:grid-cols-2 h-full w-full" style="padding: 10px;">
+      
+                <div id="left" class="h-full w-full flex flex-col border-right items-center">
+                    
+
+                </div>
+
+                <div id="right" class="h-full w-full hidden lg:flex" style="justify-content: center;">
+                    <ContactForm :name="name" :email="email" :message="message" />
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+  </main>
+</template>
+
+<style scoped>
+
 
 #img {
   @apply flex justify-center w-full mt-5 h-80
 }
 
-.form-content {
-  padding: 75px 50px 0px 75px;
-  width: 100%;
-  height: 100%;
-  overflow-y: auto;
-  font-size: 15px;
-}
 #header {
-  min-width: 500px;
-  margin-bottom: 5px;
-  color: #746c5c;
-@apply  font-fira_retina;
+  
+  
 }
 
 </style>

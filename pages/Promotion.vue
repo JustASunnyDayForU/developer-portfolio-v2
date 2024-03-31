@@ -6,8 +6,8 @@
     <div  class="flex flex-col w-full overflow-hidden">
       <!-- projects -->
   
-      <div id="header">
-          <div class="text-3xl flex justify-center mt-3">
+      <div id="section">
+          <div class="text-3xl flex justify-center">
             PROMOTION
           </div>
         </div>     
@@ -17,21 +17,6 @@
 </template>
 
 <style scoped>
-
-#scrollable-section {
-  overflow-y: auto;
-}
-#projects-case {
-  /* padding: 100px; */
-}
-
-#header {
-  min-width: 500px;
-  margin-bottom: 5px;
-  color: #746c5c;
-@apply  font-fira_retina ;
-}
-
 #title {
   /*border: 1px solid #1E2D3D;*/
   color: #99abb9;

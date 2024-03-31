@@ -42,17 +42,16 @@ export default {
 </template>
 
 <style>
-
 footer {
   position: relative;
   bottom: 0;
   left: 0;
   right: 0;
-  background: #111;
+  background: #ffffff;
   height: auto;
   width: auto;
   padding-top: 40px;
-  color: #fff;
+  color: #000000;
 }
 
 .footer-content {
@@ -98,7 +97,7 @@ footer {
 }
 
 .socials a i {
-    color: gray;
+  color: gray;
   font-size: 2rem;
   width: 20px;
   transition: color 0.4s ease;
@@ -109,30 +108,22 @@ footer {
 }
 
 .footer-bottom {
-  background: #000;
-
+  background: #a0a09f;
   width: auto;
-
   padding: 20px;
-
   padding-bottom: 20px;
-
   text-align: center;
 }
 
 .footer-bottom p {
   float: left;
-
   font-size: 14px;
-
   word-spacing: 2px;
 }
 
 .footer-bottom p a {
   color: #ccc;
-
   font-size: 16px;
-
   text-decoration: none;
 }
 
@@ -150,13 +141,11 @@ footer {
 
 .footer-menu ul li {
   padding-right: 10px;
-
   display: block;
 }
 
 .footer-menu ul li a {
   color: #cfd2d6;
-
   text-decoration: none;
 }
 
@@ -171,11 +160,8 @@ footer {
 
   .footer-menu ul {
     display: flex;
-
     margin-top: 10px;
-
     margin-bottom: 20px;
-
     text-align: center;
   }
 }

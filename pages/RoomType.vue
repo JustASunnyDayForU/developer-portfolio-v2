@@ -16,28 +16,54 @@
           </div>
         </div>
 
-      <div id="content" class="overflow-hidden">
-        <div id="title" class="text-3xl flex">
-          PENTHOUSE
+      <div class="section">
+        <div id="colorhead">
+          <div id="title" class="text-3xl">
+              PENHOUSE
+          </div>
         </div>
         <div id="img">
               <img src="/images/projects/ai-resources.png" alt="">
         </div>
-        <div id="title" class="text-3xl flex">
-          DUPLEX
+        
+      </div>
+
+      <div class="section">
+        <div id="colorhead">
+          <div id="title" class="text-3xl">
+            DUPLEX
+          </div>
         </div>
-        <div id="title" class="text-3xl flex">
-          TYPE A
+
+      </div>
+        
+      <div class="section">
+        <div id="colorhead">
+          <div id="title" class="text-3xl">
+            TYPE A
+          </div>
         </div>
-        <div id="title" class="text-3xl flex">
-          TYPE B
+
+      </div>
+
+      <div class="section">
+        <div id="colorhead">
+          <div id="title" class="text-3xl">
+            TYPE B
+          </div>
         </div>
-        <div id="title" class="text-3xl flex">
-          TYPE C
+
+      </div>
+
+      <div class="section">
+        <div id="colorhead">
+          <div id="title" class="text-3xl">
+            TYPE C
+          </div>
         </div>
         
       </div>
-        
+
     </div>
        
 </main>
@@ -56,14 +82,6 @@
 @apply  font-fira_retina ;
 }
 
-#title {
-  /*border: 1px solid #1E2D3D;*/
-  color: #99abb9;
-  background-color: #101920;
-  border-radius: 0px;
-  /*max-width: 400px; */
-  /* max-height: 315px; */
-}
 
 #img {
   @apply flex justify-center w-full mt-5 h-80

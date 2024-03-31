@@ -1,6 +1,5 @@
 const config = require('./developer.json')
-const siteTitle = `${config.name} | ${config.role}`
-
+const siteTitle = `${config.name}`
 
 /*
  * Nuxt 3 Config File
@@ -20,7 +19,7 @@ export default defineNuxtConfig({
    */
   app: {
     head: {
-      title: siteTitle, // App window nav title
+      title: siteTitle,
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
