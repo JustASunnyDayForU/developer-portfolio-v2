@@ -44,13 +44,13 @@ export default {
 <style>
 
 footer {
-  position: absolute;
+  position: relative;
   bottom: 0;
   left: 0;
   right: 0;
   background: #111;
   height: auto;
-  width: 100vw;
+  width: auto;
   padding-top: 40px;
   color: #fff;
 }
@@ -111,11 +111,11 @@ footer {
 .footer-bottom {
   background: #000;
 
-  width: 100vw;
+  width: auto;
 
   padding: 20px;
 
-  padding-bottom: 40px;
+  padding-bottom: 20px;
 
   text-align: center;
 }

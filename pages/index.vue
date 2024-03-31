@@ -1,82 +1,91 @@
 <template>
-  	<main v-if="!loading">
+  <main v-if="!loading" class="flex flex-col flex-auto lg:flex-row overflow-hidden">
 
-      <section class="content">
+    <!-- content -->
 
-        <div id="info">
-          <div class="head">
-            <span>
-              Hi all, I am
-            </span>
-            <h1>{{ config.dev.name }}</h1>
-            <h2>> {{ config.dev.role }}</h2>
+    <div  class="flex flex-col w-full overflow-hidden">
+      <!-- projects -->
+  
+      <div id="header">
+          <div id="img">
+              <img src="/images/projects/ai-resources.png" alt="">
           </div>
-          
+          <div class="text-3xl flex justify-center mt-3">
+            THE ORIENTAL BEACH CONDOMINIUM
+          </div>
+          <div class="flex justify-center">
+            <div class="text-center max-w-6xl">
+              The Oriental beach condominium is an exclusive development of 50 comdominiums that facilitate the luxury living of your dreams. 
+              The development located between Baan Pae and Laem Mae Pim on the beachside, which means no road or traffic concern, 
+              witha very nice view of Koh Samet. You will have private access to the best beach of Thailand's East Coast 
+              where you can enjoy with very beautiful view of sunrise and sunset
+            </div>
+      </div>
         </div>
-      </section>
 
-	</main>
+      <div id="content" class="overflow-hidden">
+        <div id="title" class="text-3xl flex">
+          THE ORIENTAL BEACH CONDOMINIUM
+        </div>
+      </div>
+        
+    </div>
+       
+</main>
 </template>
 
-<style>
+<style scoped>
 
-main {
-
+#scrollable-section {
+  overflow-y: auto;
+}
+#projects-case {
+  /* padding: 100px; */
 }
 
-.content {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  width: 100%;
+#header {
+  min-width: 500px;
+  margin-bottom: 5px;
+  color: #746c5c;
+@apply  font-fira_retina ;
+}
+
+#title {
+  /*border: 1px solid #1E2D3D;*/
+  color: #99abb9;
+  background-color: #101920;
+  border-radius: 0px;
+  /*max-width: 400px; */
+  /* max-height: 315px; */
+}
+
+#img {
+  @apply flex justify-center w-full mt-5 h-80
+}
+#showcase {
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+}
+
+#view-button {
+  background-color: #1C2B3A;
+}
+
+#view-button:hover {
+  background-color: #263B50;
+}
+
+#window {
+  max-height: 120px;
+  position: relative;
   overflow: hidden;
-	justify-content: center;
-	
 }
 
-.head {
-  padding-bottom: 3rem;
-}
-
-#info {
-  width: 100%;
-	display: flex;
-	flex-direction: column;
-}
-
-#info > span {
-  font-size: 14px;
-  line-height: 1;
-  color: #607B96;
-  font-family: 'Fira Code Retina';
-  padding-bottom: 1rem;
-}
-
-#info {
-	padding-block: 2.5rem;
-}
-
-.hide {
-  display: none;
-}
-
-
-/* mobile */
-@media (max-width: 768px) {
-	main .content {
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-		margin: 1.75rem; /* 28px */
-	}
-
-}
 
 </style>
 
 <script>
 export default {
-  name: 'Hello',
   setup() {
     const config = useRuntimeConfig()
     return {
@@ -85,35 +94,13 @@ export default {
   },
   data() {
     return {
-      isMobile: false,
-      loading: true
-    }
+    };
   },
   mounted() {
-    // Detectamos si es mobile
-    if (window.innerWidth <= 1024) {
-      this.isMobile = true
-    }
-
-    // Escuchamos los cambios de tamaño de pantalla
-    window.addEventListener('resize', this.handleResize)
-
-    // When the component is mounted, we can remove the loader.
-    this.loading = false
-  },
-  beforeDestroy() {
-    // Remove the event listener when the component is destroyed.
-    window.removeEventListener('resize', this.handleResize)
+    this.loading = false;
   },
   methods: {
-    handleResize() {
-      if (window.innerWidth <= 1024) {
-        this.isMobile = true
-      } else {
-        this.isMobile = false
-      }
-    }
-  }
-}
-</script>
+  },
+};
 
+</script>

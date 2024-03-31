@@ -7,14 +7,17 @@ html {
   --bg-background: white;
   color-scheme:var(--bg-background);
   background-color: var(--bg-background);
-  height: stretch;
+  height: 100%;
   width: stretch;
-  margin: 30px;
+  margin-right: 30px;
+  margin-left: 30px
 }
 
 body {
-  height: stretch;
-  width: stretch;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
 }
 
 main.page {
@@ -23,14 +26,15 @@ main.page {
   display: flex;
   flex-direction: column;
   flex: 1 1 auto;
-  overflow: hidden;
+  //overflow: hidden;
 }
 
 #__nuxt {
-  --bg-blue-background: rgb(242, 242, 242);
+  --bg-blue-background: rgb(0,0,0);
   background-color: var(--bg-blue-background);
   height: 100%;
   width: 100%;
+  flex-grow: 1;
 }
 
 #section-content-title-contact {
@@ -59,6 +63,16 @@ main.page {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #7B9BBB;
+}
+
+.bg-gray-200 {
+  background-color: #e5e7eb;
+}
+.p-6 {
+  padding: 1.5rem; /* 24px */
+}
+.rounded-lg {
+  border-radius: 0.5rem; /* 8px */
 }
 
 /* Fonts */

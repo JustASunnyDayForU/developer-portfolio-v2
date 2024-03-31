@@ -1,225 +1,112 @@
 <template>
-    <main v-if="!loading" class="flex flex-col flex-auto lg:flex-row overflow-hidden">
+  <main v-if="!loading" class="flex flex-col flex-auto lg:flex-row overflow-hidden">
+
+    <!-- content -->
+
+    <div  class="flex flex-col w-full overflow-hidden">
+      <!-- projects -->
   
-      
-  </main>
-  </template>
-  
-  <style>
-  
-  #filters {
-    padding: 10px 25px;
-  }
-  
-  #tab {
-    padding: 25px 25px 5px;
-    flex-wrap: wrap;
-  }
-  
-  .tech-icon {
-    opacity: 0.4;
-  }
-  
-  .tech-icon.active {
-    opacity: 1;
-  }
-  
-  #title-tech.active {
-    color: white;
-  }
-  
-  #projects-case {
-    /* padding: 100px; */
-  }
-  
-  #project {
-    min-width: 400px;
-    margin-bottom: 5px;
-  }
-  
-  #project-card {
-    border: 1px solid #1E2D3D;
-    background-color: #011221;
-    border-radius: 15px;
-    max-width: 400px;
-    /* max-height: 315px; */
-  }
-  
-  #showcase {
-    border-top-right-radius: 15px;
-    border-top-left-radius: 15px;
-  }
-  
-  #view-button {
-    background-color: #1C2B3A;
-  }
-  
-  #view-button:hover {
-    background-color: #263B50;
-  }
-  
-  #window {
-    max-height: 120px;
-    position: relative;
-    overflow: hidden;
-  }
-  
-  input[type="checkbox"] {
-    appearance: none;
-    background-color: transparent;
-    width: 1.15em;
-    height: 1.15em;
-    border: 2px solid currentColor;
-    border-radius: 0.15em;
-    margin-top: 1px;
-  }
-  
-  input[type="checkbox"]:checked {
-    background-color: currentColor;
-    background-image: url("data:image/svg+xml;utf8,<svg width='13' height='10' viewBox='0 0 13 10' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M5.38587 7.2802L11.9718 0.693573L12.9856 1.70668L5.38587 9.30641L0.826172 4.74671L1.83928 3.73361L5.38587 7.2802Z' fill='white'/></svg>");
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-  
-  input[type="checkbox"]:checked:hover {
-    box-shadow: #607b968b 0px 0px 0px 2px;
-  }
-  
-  input[type="checkbox"]:not(:checked) {
-    border-color: currentColor;
-  }
-  
-  input[type="checkbox"]:hover {
-    cursor: pointer;
-    background-color: currentColor;
-    background-image: url("data:image/svg+xml;utf8,<svg width='13' height='10' viewBox='0 0 13 10' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M5.38587 7.2802L11.9718 0.693573L12.9856 1.70668L5.38587 9.30641L0.826172 4.74671L1.83928 3.73361L5.38587 7.2802Z' fill='white'/></svg>");
-    background-repeat: no-repeat;
-    background-position: center;
-    box-shadow: #607b968b 0px 0px 0px 2px;
-  }
-  
-  input[type="checkbox"]:hover:not(:checked) {
-    cursor: pointer;
-    background-color: rgba(0, 0, 0, 0.1);
-    background-image: none;
-    box-shadow: #607b968b 0px 0px 0px 2px;
-  }
-  
-  input[type="checkbox"]:focus {
-    box-shadow: none;
-  }
-  
-  @media (max-width: 768px) {
-    #projects-case {
-      padding: 0px 25px 40px;
-    }
-  
-    #project {
-      min-width: 100%;
-    }
-  }
-  
-  @media (min-width: 768px) {
-    #projects-case {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      padding: 50px 50px 40px;
-    }
-    #project {
-      width: 100%;
-      min-width: 100%;
-      padding-inline: 5px;
-    }
-  }
-  
-  @media (min-width: 1350px) {
-    #projects-case {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      padding: 50px 80px 40px;
-      /* padding: 100px 100px 40px; */
-    }
-    #project {
-      width: 100%;
-      min-width: 100%;
-      padding-inline: 20px;
-    }
-  }
-  
-  @keyframes animateToBottom {
-    from {
-      transform: translate3d(0, -200px, 0);
-    }
-    to {
-      transform: translate3d(0, 10px, 0);
-    }
-  }
-  </style>
-  
-  <script>
-  export default {
-    setup() {
-      const config = useRuntimeConfig()
-      return {
-        config
-      }
-    },
-    data() {
-      return {
-        techs: ['React', 'HTML', 'CSS', 'Vue', 'Angular', 'Gatsby', 'Flutter'],
-        filters: ['all'],
-        projects: '',
-        loading: true,
-      };
-    },
-    mounted() {
-      this.projects = this.config.public.dev.projects;
-      this.loading = false;
-    },
-    methods: {
-      filterProjects(tech) {
-  
-        document.getElementById('icon-tech-' + tech).classList.toggle('active'); // change tech icon opacity
-        document.getElementById('title-tech-' + tech).classList.toggle('active'); // change tech text color
-  
-        const check = document.getElementById(tech);
-        if (check.checked) {
-          this.filters = this.filters.filter((item) => item !== 'all'); // remove 'all' from filters
-          this.filters.push(tech) // add tech to filters
-        } else {
-          this.filters = this.filters.filter((item) => item !== tech); // remove tech from filters
-          this.filters.length === 0 ? this.filters.push('all') : null; // add 'all' to filters if filters is empty
-        }
-        this.filters[0] == 'all' ? this.projects = this.config.public.dev.projects : this.projects = this.filterProjectsBy(this.filters);
-  
-        if(this.projects.length === 0){
-          // set flex to projects-case
-          document.getElementById('projects-case').classList.remove('grid');
-          document.getElementById('not-found').classList.remove('hidden');
-          
-        }else{
-          // set grid to projects-case
-          document.getElementById('projects-case').classList.add('grid');
-          document.getElementById('not-found').classList.add('hidden');
-        }
+      <div id="header">
+          <div id="img">
+              <img src="/images/projects/ai-resources.png" alt="">
+          </div>
+
+          <div class="text-3xl flex justify-center mt-3">
+              MASTER PLAN
+          </div>
+        </div>
+
+      <div id="content" class="overflow-hidden">
+        <div id="title" class="text-3xl flex">
+          PENTHOUSE
+        </div>
+        <div id="img">
+              <img src="/images/projects/ai-resources.png" alt="">
+        </div>
+        <div id="title" class="text-3xl flex">
+          DUPLEX
+        </div>
+        <div id="title" class="text-3xl flex">
+          TYPE A
+        </div>
+        <div id="title" class="text-3xl flex">
+          TYPE B
+        </div>
+        <div id="title" class="text-3xl flex">
+          TYPE C
+        </div>
         
-      },
-      hiddeSection() {
-        document.getElementById('filter-menu').classList.toggle('hidden');
-        document.getElementsByClassName('section-arrow')[0].classList.toggle('rotate-90');
-      },
-      /**
-       * * Filter projects by techs
-       * * Each filter has to be an string with tech name that matches with project.tech !!
-       * ? If you want to filter projects that matches with ALL tech in filters, use 'every' instead of 'some'
-       * @param {*} filters is an array with techs names.
-       */
-      filterProjectsBy(filters) {
-        const projectArray = Object.values(this.config.public.dev.projects);
-        return projectArray.filter(project => {
-          return filters.some(filter => project.tech.includes(filter)); // change here your condition 'some' or 'every'
-        });
-      },
-    },
-  };
-  
-  </script>
-  
+      </div>
+        
+    </div>
+       
+</main>
+</template>
+
+<style scoped>
+
+#projects-case {
+  /* padding: 100px; */
+}
+
+#header {
+  min-width: 500px;
+  margin-bottom: 5px;
+  color: #746c5c;
+@apply  font-fira_retina ;
+}
+
+#title {
+  /*border: 1px solid #1E2D3D;*/
+  color: #99abb9;
+  background-color: #101920;
+  border-radius: 0px;
+  /*max-width: 400px; */
+  /* max-height: 315px; */
+}
+
+#img {
+  @apply flex justify-center w-full mt-5 h-80
+}
+#showcase {
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+}
+
+#view-button {
+  background-color: #1C2B3A;
+}
+
+#view-button:hover {
+  background-color: #263B50;
+}
+
+#window {
+  max-height: 120px;
+  position: relative;
+  overflow: hidden;
+}
+
+
+</style>
+
+<script>
+export default {
+  setup() {
+    const config = useRuntimeConfig()
+    return {
+      config
+    }
+  },
+  data() {
+    return {
+    };
+  },
+  mounted() {
+    this.loading = false;
+  },
+  methods: {
+  },
+};
+
+</script>
