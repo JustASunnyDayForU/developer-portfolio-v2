@@ -55,6 +55,21 @@ main.page {
   text-align: start; align-items: center;
 }
 
+.parent{
+  padding-top: 25px;
+  display: flex;
+  flex-direction: row;
+  min-height: 450px;
+  height: fit-content;
+  max-height: 600px;
+}
+
+.parent img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 #title {
   color: #ffffff;
   padding-left: 10px;

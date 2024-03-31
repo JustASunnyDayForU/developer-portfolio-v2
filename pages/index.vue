@@ -59,9 +59,9 @@
             <br>fresh breeze together
           </p>
         </div>
-        <div class="child2" style="width: 1%; background-color: #ffffff;">
+        <div style="width: 1%; background-color: #ffffff;">
         </div>
-        <div class="child3" style="width: 29%;">
+        <div style="width: 29%;">
           <img src="/images/projects/ai-resources.png" alt="" style="object-fit: cover;">
         </div>
       </div>
@@ -71,21 +71,6 @@
 </template>
 
 <style scoped>
-.parent{
-  padding-top: 25px;
-  display: flex;
-  flex-direction: row;
-  min-height: 450px;
-  height: fit-content;
-  max-height: 600px;
-}
-
-.parent img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
 .services-content .service-box {
   overflow: hidden;
   position: relative;
